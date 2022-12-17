@@ -5,6 +5,9 @@ import styles from '../styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
+let bar = {} as { hoge: number}
+bar.hoge = 1;
+
 type Prop = {
   text:string
 }
