@@ -16,10 +16,20 @@ const Title = (prop: Prop) => {
   return <p>{prop.text}</p>
 }
 
+// 文字列リテラル型でpropsを指定する
+// 「テキスト」のみを許容する
+const Component = (props: {text: "テキスト"}) => {
+  if(props.text === "テキスト") {
+    return <p>テキストが渡されました。</p>
+  }
+  return <p>それ以外</p>
+}
+
 export default function Home() {
   return (
     <>
       <Title text="test"></Title>
+      <Component text='テキスト'/>
     </>
   )
 }
