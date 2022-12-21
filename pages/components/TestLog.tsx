@@ -1,4 +1,4 @@
-import { Colors } from "../utility/Test";
+import { AnimalObjType, Colors } from "../utility/Test";
 
 export const TestLog = () => {
   // TypeはUnionTypesで設定
@@ -26,10 +26,23 @@ export const TestLog = () => {
     console.log(Colors[key])
   }
 
+  const animals: AnimalObjType = {
+    // オブジェクトがcatかDogに限定される！
+    // オブジェクトの初期化などで値を限定させたい場合に有効。
+    "cat": "にゃー",
+    "dog": "ワン",
+  }
+
+  // 動物の鳴き声を表示
+  const showAnimalGreet = (key: keyof AnimalObjType) => {
+    console.log(animals[key])
+  }
+
   return (
     <>
       <button onClick={() => {showType("teriary")}} >タイプを表示</button>
       <button onClick={() => {showSetColors("a")}} >カラーを表示</button>
+      <button onClick={() => {showAnimalGreet("cat")}} >動物の鳴き声を表示</button>
     </>
   )
 }
