@@ -22,14 +22,14 @@ export const TestLog = () => {
     c: "yellow"
   }
   // カラーを出力
-  const showSetColors = (color:Colors) => {
-    console.log(color)
+  const showSetColors = (key: keyof Colors) => {
+    console.log(Colors[key])
   }
 
   return (
     <>
-    <button onClick={() => {showType("teriary")}} >タイプを表示</button>
-    <button onClick={() => {showSetColors(Colors)}} >カラーを表示</button>
+      <button onClick={() => {showType("teriary")}} >タイプを表示</button>
+      <button onClick={() => {showSetColors("a")}} >カラーを表示</button>
     </>
   )
 }
