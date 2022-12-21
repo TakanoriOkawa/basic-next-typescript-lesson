@@ -1,4 +1,5 @@
 import { Batch } from './components/batch';
+import { TestLog } from './components/TestLog';
 
 let bar = {} as { hoge: number}
 bar.hoge = 1;
@@ -26,6 +27,8 @@ export default function Home() {
       <Batch isShow></Batch>
       <Title text="test"></Title>
       <Component text='テキスト'/>
+
+      <TestLog></TestLog>
     </>
   )
 }
