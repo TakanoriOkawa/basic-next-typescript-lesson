@@ -29,6 +29,9 @@ export default function Home() {
       <Component text='テキスト'/>
 
       <TestLog></TestLog>
+      <h1 className="text-3xl font-bold underline text-red-500">
+        Hello world!
+      </h1>
     </>
   )
 }
