@@ -1,6 +1,7 @@
 import { useState } from "react"
 
-type Foo<T> = {
+// Tの初期値
+type Foo<T = string> = {
   foo: T
 }
 
@@ -45,19 +46,9 @@ export const Generics = () => {
   const [name, setName] = useState("")
   const [city, setCity] = useState("")
 
-  const CheckVal = (obj: Foo<string>) => {
+  const CheckVal = (obj: Foo) => {
     console.log(obj)
   }
-
-  // const register = () => {
-  //   if(city) return;
-  //   usUsers.push({name: name, city: city})
-  // }
-
-  // const show = () => {
-  //   console.log("日本", jpUsers)
-  //   console.log("アメリカ", usUsers)
-  // }
 
   return (
     <>
@@ -71,9 +62,6 @@ export const Generics = () => {
       <label>都市</label>
       <input type="text" value={city} onChange={(e) => setCity(e.target.value)} />
       <button>登録</button>
-
-      {/* <button onClick={() => register()}>ユーザー登録</button>
-      <button onClick={() => show()}>ユーザー一覧</button> */}
     </>
   )
 }
