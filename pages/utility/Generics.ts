@@ -16,11 +16,19 @@ export const product: ProductList<string, number> = {
 
 // アロー関数の書き方
 // 関数名 = <Generic>(arg:Generic) => {}
-const upperString = <T extends string>(arg: T) => {
-  console.log(arg.toUpperCase())
+const upperString = <T extends string | number>(arg: T) => {
+
+  // 型の絞り込み
+  if(typeof arg === "string") {
+    console.log(arg.toUpperCase())
+    return
+  }
+  console.log(arg.toString());
 }
 
 // ジェネリクスを指定する場合
 upperString<string>("hoge");
 // 引数から型を推論してくれる
 upperString("fuga")
+
+upperString(1000)
