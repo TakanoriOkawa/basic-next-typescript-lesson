@@ -1,6 +1,10 @@
 import { Batch } from './components/batch';
 import { Generics } from './components/Generics';
 import { TestLog } from './components/TestLog';
+import { product } from './utility/Generics';
+
+console.log(product)
+
 
 let bar = {} as { hoge: number}
 bar.hoge = 1;
