@@ -1,4 +1,5 @@
 import { Batch } from './components/batch';
+import { Generics } from './components/Generics';
 import { TestLog } from './components/TestLog';
 
 let bar = {} as { hoge: number}
@@ -32,6 +33,8 @@ export default function Home() {
       <h1 className="text-3xl font-bold underline text-red-500">
         Hello world!
       </h1>
+
+      <Generics />
     </>
   )
 }
