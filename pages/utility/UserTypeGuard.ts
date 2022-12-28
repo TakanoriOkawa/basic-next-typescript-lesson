@@ -23,3 +23,5 @@ const initUser = (val: unknown) => {
 
 initUser({name: "田中", lang: "ja"})
 console.log("結果")
+
+// 引数の型がよくわかっていない場合に使える
