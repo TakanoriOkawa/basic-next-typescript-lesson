@@ -1,5 +1,6 @@
 import { Batch } from './components/batch';
 import { Generics } from './components/Generics';
+import Input from './components/Input';
 import { TestLog } from './components/TestLog';
 import { product } from './utility/Generics';
 
@@ -39,6 +40,9 @@ export default function Home() {
       </h1>
 
       <Generics />
+
+
+      <Input />
     </>
   )
 }

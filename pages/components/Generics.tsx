@@ -41,13 +41,19 @@ const user: User<"日本" | "日本以外"> = {
 }
 
 export const Generics = () => {
-  console.log("rendering🌟")
-
   const [name, setName] = useState("")
-  const [city, setCity] = useState("")
+  const [city, setCity] = useState("");
 
-  const CheckVal = (obj: Foo) => {
+  // まだ完璧に理解できていない
+  const [users, setUsers] = useState<Japanese[] | American[]>([])
+
+  const CheckVal = (obj: Foo<string>) => {
     console.log(obj)
+  }
+
+  const show = () => {
+    console.log("日本", jpUsers)
+    console.log("アメリカ", usUsers)
   }
 
   return (
@@ -62,6 +68,8 @@ export const Generics = () => {
       <label>都市</label>
       <input type="text" value={city} onChange={(e) => setCity(e.target.value)} />
       <button>登録</button>
+
+      <button onClick={() => show()}>ユーザー一覧</button>
     </>
   )
 }
