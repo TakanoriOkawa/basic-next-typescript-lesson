@@ -53,8 +53,32 @@ type E = {name: string; lang: "fr"}
 
 const union = (val: C | D | E) => {
   //　同じプロパティの場合の絞り込み
+  // userの権限分岐などで使われたり
   if(val.lang === "ja" || val.lang === "en") {
     return val
   }
   return val
 } 
+
+export const switchGuard = (val: C | D | E) => {
+  switch(val.lang) {
+    case "ja": {
+      return val
+      break;
+    }
+    case "en": {
+      return val
+      break;
+    }
+    case "fr": {
+      return val
+      break;
+    }
+    default: {
+      throw Error("lang is not defined")
+    }
+  }
+}
+
+const val = switchGuard({name: "石田", lang:"fr"})
+console.log(val)

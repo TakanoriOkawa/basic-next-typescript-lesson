@@ -3,6 +3,8 @@ import { Generics } from './components/Generics';
 import Input from './components/Input';
 import { TestLog } from './components/TestLog';
 import { product } from './utility/Generics';
+import './utility/TypeGuard';
+
 
 console.log(product)
 
